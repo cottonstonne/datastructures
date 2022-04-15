@@ -20,7 +20,6 @@ void insertstart(node* &head,int a){//try removing & from head,(reference and va
 		n->next=head;
 		head=n;
 	}
-	return;
 }
 void insertat(node* &head,int a,int p){
 	if(p==0){
@@ -44,11 +43,28 @@ void insertatend(node* &head,int a){
 	}
 	t->next=n;
 }
+void deletestart(node* &head){
+	head=head->next;
+}
+void deleteat(node* &head,int a){
+	if(head->val==a){
+		deletestart(head);
+		return;
+	}
+	node* t=head;
+	while(t->next->val!=a){
+		t=t->next;
+	}
+	t->next=t->next->next;
+}
 void show(node* head){
+	cout << head->val;
+	head=head->next;
 	while(head!=NULL){
-		cout << head->val << endl;
+		cout << "->" << head->val;
 		head=head->next;
 	}
+	cout << endl;
 }
 int main(){
 	node* head=NULL;
@@ -56,6 +72,14 @@ int main(){
 	insertstart(head,0);
 	insertatend(head,2);
 	insertat(head,8,4);
+	show(head);
+	deleteat(head,1);
+	show(head);
+	deletestart(head);
+	show(head);
+	insertstart(head,0);
+	show(head);
+	deleteat(head,0);
 	show(head);
 	return 0;
 }
