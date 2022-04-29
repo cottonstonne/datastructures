@@ -66,6 +66,19 @@ void show(node* head){
 	}
 	cout << endl;
 }
+void reverse(node* &head){ //learn using recursion
+	node* pre=NULL;
+	node* cur=head;
+	node* next=head->next;
+	while(cur!=NULL){
+		next=cur->next;
+		cur->next=pre;
+
+		pre=cur;
+		cur=next;
+	}
+	head=pre;
+}
 int main(){
 	node* head=NULL;
 	insertstart(head,1);
@@ -80,6 +93,13 @@ int main(){
 	insertstart(head,0);
 	show(head);
 	deleteat(head,0);
+	show(head);
+	insertat(head,1,1);
+	insertat(head,2,2);
+	insertat(head,3,3);
+	insertstart(head,0);
+	show(head);
+	reverse(head);
 	show(head);
 	return 0;
 }
