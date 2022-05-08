@@ -7,9 +7,13 @@ int main(){
 	hash["ab"]=1;
 	hash["ab"]++;
 	hash["bc"]++;
-	if(hash["cd"]==0)
-		cout << "not" << endl;
-	cout << hash["ab"]<< endl;
-	cout << hash["bc"]<< endl; //inserts a value if not exists.
+	for(auto i:hash){
+		cout << i.first << endl;
+		cout << i.second << endl;
+		break;
+	}
+	auto s="string"; // auto fucking stores every thing
+	auto x=1;
+	cout << s << x << endl;
 	return 0;
 }
