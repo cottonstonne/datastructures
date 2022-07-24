@@ -19,5 +19,11 @@ int main(){
 	auto x=1;
 	cout << s << x << endl;
 	cout << hash["ok"] << endl;
+        // initilising at the decleration
+	unordered_map<string,string>store={{"tom","cat"},{"jerry","mice"}};
+	for(auto i:store){
+		cout << i.first << " : " << i.second << endl;
+	}
+	cout << endl;
 	return 0;
 }
