@@ -10,7 +10,17 @@ class node{
 		next=NULL;
 	}
 };
-
+//print whole linked list
+void show(node* head){
+	cout << head->val;
+	head=head->next;
+	while(head!=NULL){
+		cout << "->" << head->val;
+		head=head->next;
+	}
+	cout << endl;
+}
+//insertion operations in linked list
 void insertstart(node* &head,int a){//try removing & from head,(reference and value)
 	node* n=new node(a);
 	if(head==NULL){
@@ -20,6 +30,14 @@ void insertstart(node* &head,int a){//try removing & from head,(reference and va
 		n->next=head;
 		head=n;
 	}
+}
+void insertatend(node* &head,int a){
+	node* n=new node(a);
+	node* t=head;
+	while(t->next!=NULL){
+		t=t->next;
+	}
+	t->next=n;
 }
 void insertat(node* &head,int a,int p){
 	if(p==0){
@@ -35,14 +53,7 @@ void insertat(node* &head,int a,int p){
 	n->next=t->next;
 	t->next=n;
 }
-void insertatend(node* &head,int a){
-	node* n=new node(a);
-	node* t=head;
-	while(t->next!=NULL){
-		t=t->next;
-	}
-	t->next=n;
-}
+//deletion operation in linked list
 void deletestart(node* &head){
 	head=head->next;
 }
@@ -57,15 +68,7 @@ void deleteat(node* &head,int a){
 	}
 	t->next=t->next->next;
 }
-void show(node* head){
-	cout << head->val;
-	head=head->next;
-	while(head!=NULL){
-		cout << "->" << head->val;
-		head=head->next;
-	}
-	cout << endl;
-}
+//reverse all node of linked list
 void reverse(node* &head){ //learn using recursion
 	node* pre=NULL;
 	node* cur=head;
