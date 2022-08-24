@@ -21,6 +21,39 @@ void insertroot(node* &root,int a){
 		cout << "root already exits" << endl;
 	}
 }
+void insertdul(node* root,int a){
+	node* t=root;
+	node* n=new node(a);
+	while(t!=NULL){
+		if(a < t->val){
+			if(t->left==NULL){
+				t->left=n;
+				break;
+			}
+			else{
+				t=t->left;
+			}
+		}
+		else if(a > t->val){
+			if(t->right==NULL){
+				t->right=n;
+				break;
+			}
+			else{
+				t=t->right;
+			}
+		}
+		else{
+			if(t->right==NULL){
+				t->right=n;
+			}
+			else if(t->left==NULL){
+				t->left=n;
+			}
+			break;
+		}
+	}
+}
 void insert(node* root,int a){
 	node* t=root;
 	node* n=new node(a);
@@ -103,6 +136,7 @@ int main(){
 	insert(root,3);
 	insert(root,6);
 	insert(root,7);
+	insertdul(root,7);
 	cout << "preorder :";
 	preorder(root);
 	cout << endl;

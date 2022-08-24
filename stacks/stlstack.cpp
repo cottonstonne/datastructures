@@ -12,6 +12,5 @@ int main(){
 		stackbag.pop();
 	}
 	cout << endl;
-	cout << stackbag.top() << endl;
 	return 0;
 }
