@@ -1,6 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+//creating a map using vector as a key
 int main(){
 	map<vector<int>,int>store;
 	set<vector<int>>store1;
