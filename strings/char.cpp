@@ -2,7 +2,9 @@
 using namespace std;
 
 int main(){
-	float f=3.4534;
-	cout << setprecision(3) << f << endl;;
+	string s="abshyam";
+	for(char i:s){
+		cout << i+1-'a' << endl;
+	}
 	return 0;
 }
