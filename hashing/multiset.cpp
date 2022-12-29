@@ -6,10 +6,20 @@ int main(){
 	store.insert(2);
 	store.insert(2);
 	store.insert(7);
-	cout << *store.begin() << endl;
-	cout << *store.rbegin() << endl;
+	for(int i:store){
+		cout << i << " ";
+	}
+	cout << endl;
 	store.erase(store.find(2));// delete single instance
-	cout << *store.begin() << endl;
-	cout << *store.rbegin() << endl;
+	for(int i:store){
+		cout << i << " ";
+	}
+	cout << endl;
+	store.erase(store.find(2));// delete single instance
+	for(int i:store){
+		cout << i << " ";
+	}
+	cout << endl;
+	cout << *store.begin() << ":" << *store.rbegin() << endl;
 	return 0;
 }

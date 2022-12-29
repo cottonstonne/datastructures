@@ -12,6 +12,9 @@ int main(){
 	cout << *i << endl; 
 	int x=*store.begin(); //??
 	int y=*store.rbegin();// for largest element
+			      // //
+	cout << x << " " << y << endl;
+	return 0;
 	cout << x << endl;
 	for(int a:store){
 		cout << a <<" ";
